@@ -1,4 +1,4 @@
-package com.javatechie;
+package com.devops;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DevopsIntegrationApplication {
 
-	@GetMapping
-	public String message(){
-		return "welcome to javatechie";
+	@GetMapping("/")
+	public String sayHello() {
+		return "Namaskaram! This App is created as part of devops CI/CD project by deepak kumbhar";
 	}
 
 	public static void main(String[] args) {
