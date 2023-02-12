@@ -61,10 +61,8 @@ usermod -a -G docker jenkins
 * New item of type pipeline
 > maven is required to build the project
 * Go to Manage Genkins -> Global Tool Configuration -> Maven -> Add Maven -> Give Name and Select Version.
-1. Stage 1 : Build Maven
-a. give repository name
-b. 
-
+1. Stage 1 : Build Maven<br>
+>give repository address and build maven
 ```ubuntu
 mvn clean install
 ```
@@ -76,13 +74,13 @@ docker build -t springboot_app .
 ```
 > sprigboot_app is image name
 
-3. Stage 3 : Push Image to Hub
-a. login to dockerHub using username & password
+3. Stage 3 : Push Image to Hub<br>
+a. login to dockerHub using username & password<br>
 
 ```ubuntu
 docker login -u 000deepak -p ${dockerhubpwd}
 ```
-b. push image to hub
+b. push image to hub<br>
 
 ```ubuntu
 docker push 000deepak/springboot:latest
