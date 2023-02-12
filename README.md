@@ -52,6 +52,7 @@ apt install docker.io
 
 ## Give Access for Jenkins to Docker
 > add jenkins to docker users group, other wise jenkins will not be able to use docker commands
+
 ```
 usermod -a -G docker jenkins
 ```
@@ -62,22 +63,28 @@ usermod -a -G docker jenkins
 * Go to Manage Genkins -> Global Tool Configuration -> Maven -> Add Maven -> Give Name and Select Version.
 1. Stage 1 : Build Maven
 a. give repository name
-b. ```
+b. 
+
+```ubuntu
 mvn clean install
 ```
+
 2. Stage 2 : Build docker image
-```
+
+```ubuntu
 docker build -t springboot_app .
 ```
 > sprigboot_app is image name
 
 3. Stage 3 : Push Image to Hub
 a. login to dockerHub using username & password
-``` 
+
+```ubuntu
 docker login -u 000deepak -p ${dockerhubpwd}
 ```
 b. push image to hub
-```
+
+```ubuntu
 docker push 000deepak/springboot:latest
 ```
 > 000deepak is username & springboot is repo name & latest tag
