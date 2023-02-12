@@ -1,5 +1,9 @@
 # devops-automation
 
+## Springboot App
+* create a simple springboot app,by default it will run on port 8080.
+* create a repository on github and push the app to repository.
+
 ## Create EC2
 1. select ubuntu t2.medium & create ec2
 2. take access in gitbash using ssh
@@ -61,36 +65,36 @@ usermod -a -G docker jenkins
 * New item of type pipeline
 > maven is required to build the project
 * Go to Manage Genkins -> Global Tool Configuration -> Maven -> Add Maven -> Give Name and Select Version.
-1. Stage 1 : Build Maven<br>
+
+### 1. Stage 1 : Build Maven
 >give repository address and build maven
 ```ubuntu
 mvn clean install
 ```
 
-2. Stage 2 : Build docker image
+### 2. Stage 2 : Build docker image
 
 ```ubuntu
 docker build -t springboot_app .
 ```
 > sprigboot_app is image name
 
-3. Stage 3 : Push Image to Hub<br>
+### 3. Stage 3 : Push Image to Hub
 a. login to dockerHub using username & password<br>
 
 ```ubuntu
 docker login -u 000deepak -p ${dockerhubpwd}
 ```
+<br>
 b. push image to hub<br>
 
 ```ubuntu
 docker push 000deepak/springboot:latest
 ```
 > 000deepak is username & springboot is repo name & latest tag
+
+
 ## FINAL
 
 
-
-## Springboot App
-* create a simple springboot app,by default it will run on port 8080.
-* create a repository on github and push the app to repository.
 
